@@ -1,0 +1,501 @@
+/* style.css */
+
+/* --- Structure Globale --- */
+.root {
+    -fx-background-color: #f0f8ff;
+}
+
+/* --- En-tête (Top) --- */
+.header-container {
+    -fx-background-color: white;
+    -fx-padding: 12 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
+}
+
+.separator-vertical {
+    -fx-background-color: #e5e7eb;
+}
+
+/* Logo */
+.logo-icon {
+    -fx-font-size: 24px;
+}
+
+.logo-text {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e3a8a;
+}
+
+/* Menu Navigation */
+.menu-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #475569;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 8 16;
+    -fx-background-radius: 8;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+}
+
+.menu-btn:hover {
+    -fx-background-color: #f1f5f9; /* Petit effet hover gris clair */
+}
+
+.menu-btn-active {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 8 16;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+/* Profil Admin */
+.admin-badge {
+    -fx-background-color: #eff6ff;
+    -fx-padding: 6 12;
+    -fx-background-radius: 20;
+}
+
+.admin-text {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e40af;
+}
+
+/* Barre de sous-titre */
+.sub-header {
+    -fx-background-color: linear-gradient(to right, #1e3a8a, #2563eb);
+    -fx-padding: 8 14;
+}
+
+.sub-header-title {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* --- Centre (Formulaire et Table) --- */
+.content-area {
+    -fx-padding: 10;
+}
+
+.card-container {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.09), 10, 0, 0, 1);
+    -fx-padding: 14;
+}
+
+.section-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e3a8a;
+}
+
+.blue-separator {
+    -fx-background-color: #2563eb;
+}
+
+/* Champs de saisie */
+.form-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e40af;
+}
+
+.text-field-custom {
+    -fx-background-color: #eff6ff;
+    -fx-border-color: #3b82f6;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+/* Boutons d'action */
+.btn-primary {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 7 15;
+    -fx-background-radius: 7;
+    -fx-cursor: hand;
+}
+.btn-primary:hover { -fx-background-color: #1d4ed8; }
+
+.btn-secondary {
+    -fx-background-color: #6b7280;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 7 15;
+    -fx-background-radius: 7;
+    -fx-cursor: hand;
+}
+.btn-secondary:hover { -fx-background-color: #4b5563; }
+
+.btn-danger {
+    -fx-background-color: #dc2626;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 7 18;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+.btn-danger:hover { -fx-background-color: #b91c1c; }
+
+/* Recherche et Compteur */
+.counter-badge {
+    -fx-font-size: 12px;
+    -fx-text-fill: #2563eb;
+    -fx-font-weight: bold;
+    -fx-background-color: #dbeafe;
+    -fx-padding: 4 10;
+    -fx-background-radius: 15;
+}
+
+.search-field {
+    -fx-background-color: #eff6ff;
+    -fx-border-color: #3b82f6;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 8;
+    -fx-font-size: 12px;
+}
+
+/* TableView */
+.table-view-custom {
+    -fx-background-color: #f9fafb;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+.column-header-center {
+    -fx-alignment: CENTER;
+    -fx-font-weight: bold;
+}
+
+/* --- Footer (Bas) --- */
+.footer-bar {
+    -fx-background-color: linear-gradient(to right, #1e3a8a, #2563eb);
+    -fx-padding: 9;
+}
+/* Boutons ronds (Cloche / Paramètres) */
+.btn-circle-icon {
+    -fx-background-color: #f3f4f6;
+    -fx-text-fill: #374151;
+    -fx-font-size: 16px;
+    -fx-padding: 8 12;
+    -fx-background-radius: 50%;
+    -fx-cursor: hand;
+}
+.btn-circle-icon:hover {
+    -fx-background-color: #e5e7eb;
+}
+
+/* Conteneur gris clair pour le formulaire principal */
+.form-grid-container {
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 10;
+    -fx-padding: 10; /* Ajouté pour aérer interne */
+}
+
+/* Sous-formulaires (Agent Vol / Enregistrement) */
+.sub-form-box {
+    -fx-background-color: #E8EAF6;
+    -fx-padding: 10;
+    -fx-background-radius: 8;
+}
+
+/* ComboBox et PasswordField (héritent du style text-field si appliqué, sinon on force) */
+.combo-box-custom, .password-field-custom {
+    -fx-background-color: #eff6ff;
+    -fx-border-color: #3b82f6; /* ou #2563eb comme dans ton code inline */
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+/* Bouton Modifier (Bleu foncé) */
+.btn-modify {
+    -fx-background-color: #1e40af;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 6 16;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+.btn-modify:hover {
+    -fx-background-color: #1e3a8a;
+}
+/* DatePicker et Spinner (standardisation avec les autres champs) */
+.date-picker-custom, .spinner-custom {
+    -fx-background-color: #eff6ff;
+    -fx-border-color: #3b82f6;
+    -fx-border-radius: 7;
+    -fx-background-radius: 7;
+}
+
+/* Correctif pour le fond du Spinner afin qu'il soit bien bleu clair */
+.spinner-custom > .text-field {
+    -fx-background-color: transparent;
+}
+
+/* Boîte d'info verte (Durée calculée) */
+.info-box-success {
+    -fx-background-color: #d1fae5;
+    -fx-padding: 6;
+    -fx-background-radius: 7;
+    -fx-border-color: #3b82f6;
+    -fx-border-width: 1;
+    -fx-border-radius: 7;
+}
+
+.info-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e3a8a;
+    -fx-font-size: 12px;
+}
+
+.info-value {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2563eb;
+}
+/* Radio Buttons et CheckBox */
+.radio-custom, .checkbox-custom {
+    -fx-text-fill: #1e40af;
+    -fx-font-weight: bold;
+}
+
+/* Bouton "Suggérer" (Petit vert) */
+.btn-suggest {
+    -fx-background-color: #10b981;
+    -fx-text-fill: white;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 4 8;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+.btn-suggest:hover {
+    -fx-background-color: #059669;
+}
+
+/* Grande Boîte Prix Total (Vert clair avec bordure épaisse) */
+.box-total-price-large {
+    -fx-background-color: #f0fdf4;
+    -fx-padding: 8;
+    -fx-background-radius: 7;
+    -fx-border-color: #10b981;
+    -fx-border-width: 2;
+    -fx-border-radius: 7;
+}
+
+/* Textes spécifiques à la boîte prix */
+.text-price-title {
+    -fx-font-weight: bold;
+    -fx-text-fill: #065f46;
+    -fx-font-size: 12px;
+}
+
+.text-price-large {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #059669;
+}
+
+.text-price-details {
+    -fx-font-weight: bold;
+    -fx-text-fill: #065f46;
+    -fx-font-size: 11px;
+}
+
+.text-price-sub-details {
+    -fx-font-size: 10px;
+    -fx-text-fill: #047857;
+}
+/* Boîte de prix (Verte) */
+.info-box-price {
+    -fx-background-color: #d1fae5;
+    -fx-padding: 6;
+    -fx-background-radius: 7;
+    -fx-border-color: #059669;
+    -fx-border-width: 1;
+    -fx-border-radius: 7;
+}
+
+.price-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #065f46;
+    -fx-font-size: 12px;
+}
+
+.price-value {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #059669;
+}
+/* Bannière d'en-tête (Bleu dégradé) */
+.login-header {
+    -fx-background-color: linear-gradient(to right, #1e3a8a, #2563eb);
+    -fx-padding: 30;
+    -fx-alignment: CENTER;
+}
+
+.login-title-icon {
+    -fx-text-fill: white;
+    -fx-font-size: 48px;
+}
+
+.login-title-text {
+    -fx-text-fill: white;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.login-subtitle {
+    -fx-text-fill: #bfdbfe;
+    -fx-font-size: 14px;
+}
+
+/* Carte de connexion (Centre) */
+.login-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);
+    -fx-padding: 30;
+}
+
+.login-welcome-text {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e3a8a;
+}
+
+.login-instruction-text {
+    -fx-font-size: 13px;
+    -fx-text-fill: #6b7280;
+}
+
+/* Champs de saisie (plus grands pour le login) */
+.login-field-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e40af;
+    -fx-font-size: 14px;
+}
+
+.login-field {
+    -fx-background-color: #eff6ff;
+    -fx-border-color: #3b82f6;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10;
+    -fx-font-size: 14px;
+}
+
+/* Boîte d'erreur (Rouge) */
+.error-box {
+    -fx-background-color: #fee2e2;
+    -fx-border-color: #dc2626;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 12;
+}
+
+.error-text {
+    -fx-text-fill: #dc2626;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+/* Bouton de connexion (Grand) */
+.btn-login {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 40;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+.btn-login:hover {
+    -fx-background-color: #1d4ed8;
+}
+
+/* Overlay de chargement */
+.loading-overlay {
+    -fx-background-color: rgba(255, 255, 255, 0.95);
+}
+
+.loading-text {
+    -fx-font-size: 15px;
+    -fx-text-fill: #1e3a8a;
+    -fx-font-weight: bold;
+}
+/* --- AJOUTS POUR DASHBOARD STATISTIQUES --- */
+
+/* Carte Statistique (KPI) Générique */
+.stat-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0, 0, 1);
+}
+
+/* Conteneur des graphiques */
+.chart-container {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-padding: 8;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0, 0, 1);
+}
+
+/* Titres des graphiques et cartes */
+.chart-title {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e3a8a;
+}
+
+.kpi-title {
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e3a8a;
+}
+
+/* Variations de couleurs pour les KPIs */
+/* Bleu (Vols) */
+.icon-blue { -fx-font-size: 26px; -fx-text-fill: #2563eb; }
+.value-blue { -fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #1d4ed8; }
+
+/* Vert (Occupation) */
+.icon-green { -fx-font-size: 26px; -fx-text-fill: #16a34a; }
+.title-green { -fx-font-weight: bold; -fx-text-fill: #065f46; }
+.value-green { -fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #16a34a; }
+
+/* Violet (Revenus) */
+.icon-purple { -fx-font-size: 26px; -fx-text-fill: #7c3aed; }
+.title-purple { -fx-font-weight: bold; -fx-text-fill: #4c1d95; }
+.value-purple { -fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #7c3aed; }
+
+/* Footer Dashboard */
+.refresh-label {
+    -fx-font-size: 10px;
+    -fx-text-fill: #6b7280;
+}
+
+.btn-refresh {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 5 12;
+    -fx-background-radius: 7;
+    -fx-cursor: hand;
+}
+.btn-refresh:hover { -fx-background-color: #1d4ed8; }

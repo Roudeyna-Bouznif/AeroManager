@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.projet_java_vols.Gestion_des_vols.Controller.GestionAeroportsController"
+            prefWidth="1200"
+            prefHeight="700"
+            stylesheets="@style.css">
+
+    <top>
+        <VBox>
+            <HBox alignment="CENTER_LEFT" spacing="0" styleClass="header-container">
+
+                <HBox alignment="CENTER" spacing="8" style="-fx-padding: 0 15 0 0;">
+                    <Label text="✈ " styleClass="logo-icon"/>
+                    <Label text="AeroManager" styleClass="logo-text"/>
+                </HBox>
+
+                <Separator orientation="VERTICAL" styleClass="separator-vertical">
+                    <HBox.margin>
+                        <Insets left="10" right="15"/>
+                    </HBox.margin>
+                </Separator>
+
+                <HBox spacing="8" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                    <Button fx:id="btnMenuEmployes" text="👥 Employés"
+                            onAction="#allerEmploye"
+                            onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited"
+                            styleClass="menu-btn"/>
+
+                    <Button fx:id="btnMenuAeroports" text="🏢 Aéroports"
+                            onAction="#allerAeroports"
+                            styleClass="menu-btn-active"/>
+
+                    <Button fx:id="btnMenuVols" text="✈ Vols"
+                            onAction="#allerVols"
+                            onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited"
+                            styleClass="menu-btn"/>
+
+                    <Button fx:id="btnMenuEscales" text="🛬 Escales"
+                            onAction="#allerEscales"
+                            onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited"
+                            styleClass="menu-btn"/>
+
+                    <Button fx:id="btnMenuReservations" text="🎫 Réservations"
+                            onAction="#allerReservations"
+                            onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited"
+                            styleClass="menu-btn"/>
+
+                    <Button fx:id="btnMenuStats" text="📈 Statistiques"
+                            onAction="#allerStats"
+                            onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited"
+                            styleClass="menu-btn"/>
+
+                </HBox>
+
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <Separator orientation="VERTICAL" styleClass="separator-vertical">
+                        <HBox.margin>
+                            <Insets left="5" right="5"/>
+                        </HBox.margin>
+                    </Separator>
+
+                    <Button text="👤 Déconnexion"
+                            onAction="#deconnexion"
+                            styleClass="admin-badge"
+                            style="-fx-cursor: hand; -fx-border-color: transparent; -fx-background-color: #eff6ff; -fx-text-fill: #1e40af;"/>
+
+                </HBox>
+            </HBox>
+
+            <HBox alignment="CENTER" spacing="8" styleClass="sub-header">
+                <Label text="✈" style="-fx-text-fill: white; -fx-font-size: 20px;"/>
+                <Label text="Gestion des Aéroports" styleClass="sub-header-title"/>
+                <Label text="•" style="-fx-text-fill: #93c5fd; -fx-font-size: 14px;"/>
+                <Label text="Système de gestion des aéroports internationaux"
+                       style="-fx-text-fill: #bfdbfe; -fx-font-size: 11px;"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+    <VBox fx:id="vboxFormulaire" spacing="10" styleClass="content-area">
+
+        <VBox fx:id="containerSaisie" spacing="8" styleClass="card-container">
+            <Label text="📝 Informations de l'Aéroport" styleClass="section-title"/>
+            <Separator styleClass="blue-separator"/>
+
+            <GridPane hgap="10" vgap="7">
+                <columnConstraints>
+                <ColumnConstraints minWidth="90" prefWidth="100"/>
+                <ColumnConstraints minWidth="120" prefWidth="140"/>
+                <ColumnConstraints minWidth="90" prefWidth="100"/>
+                <ColumnConstraints minWidth="120" prefWidth="140"/>
+            </columnConstraints>
+
+            <Label text="Code Aéroport:" styleClass="form-label"
+                   GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="txtCodeAeroport" promptText="Ex: CDG"
+                       styleClass="text-field-custom"
+                       GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+            <Label text="Nom:" styleClass="form-label"
+                   GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+            <TextField fx:id="txtNom" promptText="Nom complet"
+                       styleClass="text-field-custom"
+                       GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+
+            <Label text="Pays:" styleClass="form-label"
+                   GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="txtPays" promptText="Pays"
+                       styleClass="text-field-custom"
+                       GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+            <Label text="Ville:" styleClass="form-label"
+                   GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+            <TextField fx:id="txtVille" promptText="Ville"
+                       styleClass="text-field-custom"
+                       GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+        </GridPane>
+
+        <HBox spacing="8" alignment="CENTER">
+            <Button fx:id="btnAjouter" text="➕ Ajouter"
+                    onAction="#ajouterAeroport"
+                    styleClass="btn-primary"/>
+            <Button fx:id="btnAnnuler" text="❌ Annuler"
+                    onAction="#annulerAction"
+                    styleClass="btn-secondary"/>
+        </HBox>
+    </VBox>
+
+    <VBox spacing="7" styleClass="card-container" VBox.vgrow="ALWAYS">
+        <HBox alignment="CENTER_LEFT" spacing="9">
+            <Label text="📋 Liste des Aéroports" styleClass="section-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="nbrAeroports" text="Total: 0" styleClass="counter-badge"/>
+        </HBox>
+        <Separator styleClass="blue-separator"/>
+
+        <HBox spacing="7" alignment="CENTER_LEFT">
+            <Label text="🔍" style="-fx-font-size: 15px;"/>
+            <TextField fx:id="txtRecherche"
+                       promptText="Rechercher aéroport..."
+                       styleClass="search-field"
+                       HBox.hgrow="ALWAYS"/>
+        </HBox>
+
+        <TableView fx:id="tableAeroports" styleClass="table-view-custom" VBox.vgrow="ALWAYS">
+            <columns>
+            <TableColumn fx:id="colCode" text="Code" prefWidth="90" styleClass="column-header-center"/>
+            <TableColumn fx:id="colNom" text="Nom" prefWidth="180"/>
+            <TableColumn fx:id="colVille" text="Ville" prefWidth="130"/>
+            <TableColumn fx:id="colPays" text="Pays" prefWidth="130"/>
+        </columns>
+        <placeholder>
+            <VBox spacing="1" alignment="CENTER">
+                <Label text="✈ " style="-fx-font-size: 38px; -fx-text-fill: #93c5fd;"/>
+                <Label text="Aucun aéroport enregistré"
+                       style="-fx-font-size: 13px; -fx-text-fill: #6b7280;"/>
+            </VBox>
+        </placeholder>
+    </TableView>
+</VBox>
+        </VBox>
+        </center>
+
+<bottom>
+<HBox alignment="CENTER" spacing="13" styleClass="footer-bar">
+    <Button fx:id="btnSupprimer" text="🗑 Supprimer"
+            onAction="#supprimerAeroport"
+            styleClass="btn-danger"/>
+    <Region HBox.hgrow="ALWAYS"/>
+    <Button text="Quitter"
+            onAction="#quitter"
+            styleClass="btn-secondary"/>
+</HBox>
+</bottom>
+        </BorderPane>
